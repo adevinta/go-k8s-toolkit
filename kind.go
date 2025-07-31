@@ -18,7 +18,7 @@ import (
 	k8sclient "sigs.k8s.io/controller-runtime/pkg/client"
 )
 
-const DefaultVersion = "v0.11.1"
+const DefaultVersion = "v0.29.0"
 
 type KubeCluster interface {
 	KubeConfigPath() string

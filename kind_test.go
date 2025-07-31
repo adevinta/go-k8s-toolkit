@@ -14,10 +14,10 @@ import (
 )
 
 func TestKind(t *testing.T) {
-	kind := k8s.KinDForVersion("v1.15.3")
-	cluster, err := kind.Start("kind-test", "v1.15.3")
+	kind := k8s.KinDForVersion("v1.32.5")
+	cluster, err := kind.Start("kind-test", "v1.32.5")
 	require.NoError(t, err)
-	assert.Equal(t, ".kind/.kube/config-kind-test-v1.15.3", cluster.KubeConfigPath())
+	assert.Equal(t, ".kind/.kube/config-kind-test-v1.32.5", cluster.KubeConfigPath())
 	cfg, err := k8s.NewClientConfigBuilder().WithKubeConfigPath(cluster.KubeConfigPath()).Build()
 	assert.NoError(t, err)
 	client, err := k8sclient.New(cfg, k8sclient.Options{})
